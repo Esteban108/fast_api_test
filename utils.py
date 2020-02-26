@@ -26,7 +26,7 @@ def process_func(func, module_name):
     """start a daemon thread """
 
     def wrapper(*args, **kwargs):
-        p = MyProds(target=func, daemon=False, args=args, kwargs=kwargs)
+        p = MyProds(target=func, daemon=True, args=args, kwargs=kwargs)
         p.module = args[0]
         p.module_name = module_name
         p.start()
